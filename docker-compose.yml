@@ -13,5 +13,20 @@ services:
       - POSTGRES_PASSWORD=${DB_PASSWORD}
     ports:
       - 5432:5432
+  web:
+    build: ./app
+    container_name: app
+    depends_on:
+      - db
+    volumes:
+      - ./app:/app
+    environment:
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+    ports:
+      - 8000:8000
+    command: /app/start.sh
+
 volumes:
   db_data:
