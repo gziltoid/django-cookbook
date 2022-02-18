@@ -14,6 +14,7 @@ class Product(models.Model):
         return self.name
 
     class Meta:
+        app_label = "cookbook"
         verbose_name = 'Продукт'
         verbose_name_plural = 'Продукты'
 
@@ -34,6 +35,7 @@ class Recipe(models.Model):
         return self.name
 
     class Meta:
+        app_label = "cookbook"
         verbose_name = 'Рецепт'
         verbose_name_plural = 'Рецепты'
 
@@ -50,6 +52,7 @@ class Unit(models.Model):
         return self.name
 
     class Meta:
+        app_label = "cookbook"
         verbose_name = 'Единица измерения'
         verbose_name_plural = 'Единицы измерения'
 
@@ -73,11 +76,12 @@ class RecipeIngredient(models.Model):
         on_delete=models.CASCADE,
         verbose_name='Единица измерения',
     )
-    quantity = models.PositiveSmallIntegerField(
-        validators=[MinValueValidator(1)],
+    quantity = models.FloatField(
+        validators=[MinValueValidator(0.1)],
         verbose_name='Количество продукта',
     )
 
     class Meta:
+        app_label = "cookbook"
         verbose_name = "Ингредиент в рецепте"
         verbose_name_plural = "Ингредиенты в рецепте"

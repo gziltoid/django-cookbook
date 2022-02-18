@@ -1,0 +1,42 @@
+[
+  {
+    "model": "cookbook.recipeingredient",
+    "pk": 1,
+    "fields": { "recipe": 1, "product": 1, "unit": 1, "quantity": 100 }
+  },
+  {
+    "model": "cookbook.recipeingredient",
+    "pk": 2,
+    "fields": { "recipe": 1, "product": 3, "unit": 2, "quantity": 1 }
+  },
+  {
+    "model": "cookbook.recipeingredient",
+    "pk": 3,
+    "fields": { "recipe": 1, "product": 6, "unit": 3, "quantity": 3 }
+  },
+  {
+    "model": "cookbook.recipeingredient",
+    "pk": 4,
+    "fields": { "recipe": 2, "product": 1, "unit": 4, "quantity": 240 }
+  },
+  {
+    "model": "cookbook.recipeingredient",
+    "pk": 5,
+    "fields": { "recipe": 2, "product": 3, "unit": 5, "quantity": 34 }
+  },
+  {
+    "model": "cookbook.recipeingredient",
+    "pk": 6,
+    "fields": { "recipe": 2, "product": 6, "unit": 6, "quantity": 1.5 }
+  },
+  {
+    "model": "cookbook.recipeingredient",
+    "pk": 7,
+    "fields": { "recipe": 2, "product": 5, "unit": 7, "quantity": 3 }
+  },
+  {
+    "model": "cookbook.recipeingredient",
+    "pk": 8,
+    "fields": { "recipe": 3, "product": 2, "unit": 8, "quantity": 2 }
+  }
+]

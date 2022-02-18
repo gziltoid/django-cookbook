@@ -1,0 +1,44 @@
+[
+  {
+    "model": "cookbook.product",
+    "pk": 1,
+    "fields": {
+      "name": "Product #1"
+    }
+  },
+  {
+    "model": "cookbook.product",
+    "pk": 2,
+    "fields": {
+      "name": "Product #2"
+    }
+  },
+  {
+    "model": "cookbook.product",
+    "pk": 3,
+    "fields": {
+      "name": "Product #3"
+    }
+  },
+  {
+    "model": "cookbook.product",
+    "pk": 4,
+    "fields": {
+      "name": "Product #4"
+    }
+  },
+  {
+    "model": "cookbook.product",
+    "pk": 5,
+    "fields": {
+      "name": "Product #5"
+    }
+  },
+  {
+    "model": "cookbook.product",
+    "pk": 6,
+    "fields": {
+      "name": "Product #6"
+    }
+  }
+]

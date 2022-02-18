@@ -1,0 +1,27 @@
+[
+  {
+    "model": "cookbook.recipe",
+    "pk": 1,
+    "fields": { "title": "Рецепт #1", "description": "Описание рецепта #1" }
+  },
+  {
+    "model": "cookbook.recipe",
+    "pk": 2,
+    "fields": { "title": "Рецепт #2", "description": "Описание рецепта #2" }
+  },
+  {
+    "model": "cookbook.recipe",
+    "pk": 3,
+    "fields": { "title": "Рецепт #3", "description": "Описание рецепта #3" }
+  },
+  {
+    "model": "cookbook.recipe",
+    "pk": 4,
+    "fields": { "title": "Рецепт #4", "description": "Описание рецепта #5" }
+  },
+  {
+    "model": "cookbook.recipe",
+    "pk": 5,
+    "fields": { "title": "Рецепт #5", "description": "Описание рецепта #5" }
+  }
+]
