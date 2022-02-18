@@ -1,3 +1,2 @@
 #! /bin/bash
-
-echo OK!
+python manage.py runserver
