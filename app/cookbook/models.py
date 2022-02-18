@@ -32,7 +32,7 @@ class Recipe(models.Model):
     )
 
     def __str__(self):
-        return self.name
+        return self.title
 
     class Meta:
         app_label = "cookbook"
@@ -80,6 +80,9 @@ class RecipeIngredient(models.Model):
         validators=[MinValueValidator(0.1)],
         verbose_name='Количество продукта',
     )
+    
+    def __str__(self):
+        return f'{self.quantity:,g} {self.unit} {self.product} - {self.recipe.title}'
 
     class Meta:
         app_label = "cookbook"
