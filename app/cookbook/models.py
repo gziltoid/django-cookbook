@@ -57,7 +57,7 @@ class Unit(models.Model):
         verbose_name_plural = 'Единицы измерения'
 
 
-class RecipeIngredient(models.Model):
+class Ingredient(models.Model):
     '''Ингредиент в рецепте'''
 
     recipe = models.ForeignKey(
@@ -69,6 +69,7 @@ class RecipeIngredient(models.Model):
     product = models.ForeignKey(
         Product,
         on_delete=models.CASCADE,
+        # related_name='ingredients',
         verbose_name='Продукт',
     )
     unit = models.ForeignKey(
@@ -81,8 +82,8 @@ class RecipeIngredient(models.Model):
         verbose_name='Количество продукта',
     )
     
-    def __str__(self):
-        return f'{self.quantity:,g} {self.unit} {self.product} - {self.recipe.title}'
+    # def __str__(self):
+    #     return f'{self.quantity:,g} {self.unit} {self.product} - {self.recipe.title}'
 
     class Meta:
         app_label = "cookbook"
