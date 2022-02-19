@@ -1,10 +1,33 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Cookbook</title>
-  </head>
-  <body>
-    <div>{{ recipe.description }}</div>
-  </body>
-</html>
-<p></p>
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <!-- Recipe Details -->
+    <div class="recipe-detail">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-12 text-center">
+              <h1>{{ recipe.title }}</h1>
+            </div>
+            <div class="col-lg-8">
+              <img src="{% static 'images/recipe1.jpg' %}" alt="recipe image" />
+              <div class="ingredient-direction">
+                <div class="row">
+                  <div class="col-lg-6 col-sm-6">
+                    <h3>Ingredients</h3>
+                    <ul class="ingredients">
+                      {% for ingredient in ingredients %}
+                        <li>{{ ingredient.quantity }} {{ ingredient.unit }} {{ ingredient.product }}</li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                  <div class="col-lg-6 col-sm-6">
+                    <h3>Directions</h3>
+                      {{ recipe.description }}
+                  </div>
+                </div>
+              </div>
+  
+    </div>  
+{% endblock %}

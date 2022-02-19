@@ -3,6 +3,6 @@ from cookbook import views
 
 
 urlpatterns = [
-    path('', views.index),
-    path('recipe/<int:pk>', views.recipe),
+    path('', views.index_view),
+    path('recipe/<int:pk>', views.recipe_view),
 ]
