@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.validators import MinValueValidator
 
 
 class Product(models.Model):
@@ -27,7 +27,7 @@ class Recipe(models.Model):
         verbose_name='Название рецепта',
     )
     description = models.TextField(
-        max_length=254,
+        max_length=10000,
         verbose_name='Описание рецепта',
     )
 
@@ -69,7 +69,6 @@ class Ingredient(models.Model):
     product = models.ForeignKey(
         Product,
         on_delete=models.CASCADE,
-        # related_name='ingredients',
         verbose_name='Продукт',
     )
     unit = models.ForeignKey(
@@ -78,12 +77,13 @@ class Ingredient(models.Model):
         verbose_name='Единица измерения',
     )
     quantity = models.FloatField(
-        validators=[MinValueValidator(0.1)],
+        validators=[MinValueValidator(0.01)],
         verbose_name='Количество продукта',
     )
-    
-    # def __str__(self):
-    #     return f'{self.quantity:,g} {self.unit} {self.product} - {self.recipe.title}'
+
+    def __str__(self):
+        return 'Ингредиент'
+
 
     class Meta:
         app_label = "cookbook"
