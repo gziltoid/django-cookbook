@@ -1,10 +1,10 @@
 from cookbook.models import Recipe, Product, Ingredient
 from django.db.models import Count
-from django.shortcuts import render, get_object_or_404, get_list_or_404
+from django.shortcuts import render, get_object_or_404
 
 
 def index_view(request):
-    products = get_list_or_404(Product)
+    products = Product.objects.all()
     recipes = []
     query = {}
 
