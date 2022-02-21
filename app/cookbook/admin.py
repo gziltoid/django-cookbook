@@ -21,7 +21,7 @@ class IngredientInline(admin.TabularInline):
 
 @admin.register(Recipe)
 class RecipeAdmin(admin.ModelAdmin):
-    list_display = ('title', 'description',)
+    list_display = ('title', 'description')
     inlines = [IngredientInline]
     search_fields = ['title']
     ordering = ('title',)

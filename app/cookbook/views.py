@@ -1,9 +1,6 @@
-from html import entities
-from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 from cookbook.models import Recipe, Product, Ingredient
-from django.db.models import Q, Prefetch, Count
-from functools import reduce
+from django.db.models import Count
 
 
 def index_view(request):
