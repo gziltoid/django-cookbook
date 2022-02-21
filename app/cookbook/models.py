@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator
+from django.db.models.functions import Lower
 
 
 class Product(models.Model):
@@ -7,11 +8,15 @@ class Product(models.Model):
 
     name = models.CharField(
         max_length=200,
+        unique=True,
         verbose_name='Название продукта',
     )
 
     def __str__(self):
         return self.name
+    
+    def clean(self):
+        self.name = self.name.capitalize()
 
     class Meta:
         app_label = "cookbook"
@@ -45,6 +50,7 @@ class Unit(models.Model):
 
     name = models.CharField(
         max_length=100,
+        unique=True,
         verbose_name='Единица измерения',
     )
 
