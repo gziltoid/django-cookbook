@@ -10,12 +10,14 @@
             <div class="col-lg-12 text-center">
               <h1>{{ recipe.title }}</h1>
             </div>
-            <div class="col-lg-8">
-              <img src="{% static 'images/recipe1.jpg' %}" alt="recipe image" />
+            <div class="col-lg-6">
+              <img src="{% static 'images/dish.png' %}" alt="recipe image" />
+            </div>
+            <div class="col-lg-10">  
               <div class="ingredient-direction">
                 <div class="row">
                   <div class="col-lg-6 col-sm-6">
-                    <h3>Ingredients</h3>
+                    <h3>Ингредиенты</h3>
                     <ul class="ingredients">
                       {% for ingredient in ingredients %}
                         <li>{{ ingredient.quantity|floatformat }} {{ ingredient.unit }} {{ ingredient.product }}</li>
@@ -23,11 +25,11 @@
                     </ul>
                   </div>
                   <div class="col-lg-6 col-sm-6">
-                    <h3>Directions</h3>
+                    <h3>Инструкции</h3>
                       {{ recipe.description|linebreaks }}
                   </div>
                 </div>
               </div>
-  
+            </div>  
     </div>  
 {% endblock %}

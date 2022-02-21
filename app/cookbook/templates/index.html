@@ -55,7 +55,7 @@
       <div class="col-lg-4 col-sm-6">
         <div class="box grid recipes">
           <a href="{% url 'recipe' recipe.id %}">
-            <img src="{% static 'images/recipe1.jpg' %}" alt="" />
+            <img src="{% static 'images/dish.png' %}" alt="" />
           </a>
           <h2><a href="{% url 'recipe' recipe.id %}">{{ recipe.title }} </a></h2>
           <p>{{ recipe.description|truncatechars:100 }}</p>
