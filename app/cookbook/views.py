@@ -1,6 +1,6 @@
-from django.shortcuts import render, get_object_or_404, get_list_or_404
 from cookbook.models import Recipe, Product, Ingredient
 from django.db.models import Count
+from django.shortcuts import render, get_object_or_404, get_list_or_404
 
 
 def index_view(request):
@@ -21,11 +21,11 @@ def index_view(request):
         if requested_products:
             recipe_ids = (
                 Ingredient.objects
-                .filter(product_id__in=requested_products)
-                .values('recipe')
-                .annotate(count=Count('recipe'))
-                .filter(count__exact=len(requested_products))
-                .values('recipe')
+                    .filter(product_id__in=requested_products)
+                    .values('recipe')
+                    .annotate(count=Count('recipe'))
+                    .filter(count__exact=len(requested_products))
+                    .values('recipe')
             )
             query["id__in"] = recipe_ids
 

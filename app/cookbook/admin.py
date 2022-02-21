@@ -1,11 +1,12 @@
-from django.contrib import admin
 from cookbook.models import Product, Ingredient, Recipe
+from django.contrib import admin
 from django.contrib.auth.models import User, Group
 
 admin.site.unregister(Group)
 admin.site.unregister(User)
 
 admin.site.site_header = "Cookbook administration"
+
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):

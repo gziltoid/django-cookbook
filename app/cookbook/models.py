@@ -1,6 +1,5 @@
-from django.db import models
 from django.core.validators import MinValueValidator
-from django.db.models.functions import Lower
+from django.db import models
 
 
 class Product(models.Model):
@@ -14,7 +13,7 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
-    
+
     def clean(self):
         self.name = self.name.capitalize()
 
@@ -89,7 +88,6 @@ class Ingredient(models.Model):
 
     def __str__(self):
         return 'Ингредиент'
-
 
     class Meta:
         app_label = "cookbook"
