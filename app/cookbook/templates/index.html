@@ -18,14 +18,17 @@
                             <div class="form-group">
                                 <label>Желаемые ингредиенты</label>
                                 <select
-                                        name="ingredients[]"
-                                        class="js-search-ingredients form-control"
-                                        multiple="multiple"
+                                    name="ingredients[]"
+                                    class="js-search-ingredients form-control"
+                                    multiple="multiple"
                                 >
                                     {% for product in products %}
-                                    <option value="{{ product.id }}" {% if product.id in request.session.products
-                                            %}selected="selected" {% endif %}>{{ product.name }}
-                                    </option>
+                                    <option
+                                        value="{{ product.id }}"
+                                        {% if product.id in request.session.products %}
+                                            selected="selected"
+                                        {% endif %}
+                                    >{{ product.name }}</option>
                                     {% endfor %}
                                 </select>
                             </div>
