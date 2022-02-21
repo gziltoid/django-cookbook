@@ -1,6 +1,8 @@
+from html import entities
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 from cookbook.models import Recipe, Product, Ingredient
-from django.db.models import Q
+from django.db.models import Q, Prefetch, Count
 from functools import reduce
 
 
@@ -9,25 +11,31 @@ def index_view(request):
     recipes = []
     query = {}
 
-    if request.method == "POST":
-        recipe_title_part = request.POST.get("recipe_name")
-        selected_product_indices = request.POST.getlist("ingredients[]")
+    request.session.clear()
 
-        if selected_product_indices:
+    if request.method == "POST":
+        requested_title = request.POST.get("recipe_name")
+        request.session['title'] = requested_title
+        requested_products = list(map(int, request.POST.getlist("ingredients[]")))
+        request.session['products'] = requested_products
+
+        if requested_products:
             recipe_ids = (
                 Ingredient.objects
-                .filter(product_id__in=selected_product_indices)
-                .values("recipe")
-                .distinct()
+                .filter(product_id__in=requested_products)
+                .values('recipe')
+                .annotate(count=Count('recipe'))
+                .filter(count__exact=len(requested_products))
+                .values('recipe')
             )
             query["id__in"] = recipe_ids
 
-        if recipe_title_part:
-            query["title__icontains"] = recipe_title_part
+        if requested_title:
+            query["title__icontains"] = requested_title
 
     recipes = Recipe.objects.filter(**query)
-
-    return render(request, "index.html", {"products": products, "recipes": recipes})
+    context = {"products": products, "recipes": recipes}
+    return render(request, "index.html", context)
 
 
 def recipe_view(request, pk):

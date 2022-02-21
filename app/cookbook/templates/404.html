@@ -1,7 +1,11 @@
-{% extends "base.html" %} 
+{% extends "base.html" %} {% load static %}
 
-{% block container %}
-    <main class="container mt-3 mb-5">
-    <p style="font-size: 30px">404: {{ message }}, на <a href="{% url 'index' %}">главную</a></p>
-    </main>
+{% block content %}
+<main class="container mt-3 mb-5"></main>
+<div class="container mt-20">
+  <p style="font-size: 30px">
+    404: {{ message }}, на <a href="{% url 'index' %}">главную</a>
+  </p>
+</div>
+</main>
 {% endblock %}
