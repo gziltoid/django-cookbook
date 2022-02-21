@@ -3,42 +3,85 @@
     "model": "cookbook.product",
     "pk": 1,
     "fields": {
-      "name": "Product #1"
+      "name": "Свиная корейка без кости"
     }
   },
   {
     "model": "cookbook.product",
     "pk": 2,
     "fields": {
-      "name": "Product #2"
+      "name": "Сало свиное свежее"
     }
   },
   {
     "model": "cookbook.product",
     "pk": 3,
     "fields": {
-      "name": "Product #3"
+      "name": "Масло сливочное"
     }
   },
   {
     "model": "cookbook.product",
     "pk": 4,
     "fields": {
-      "name": "Product #4"
+      "name": "Картофель"
     }
   },
   {
     "model": "cookbook.product",
     "pk": 5,
     "fields": {
-      "name": "Product #5"
+      "name": "Морковь"
     }
   },
   {
     "model": "cookbook.product",
     "pk": 6,
     "fields": {
-      "name": "Product #6"
+      "name": "Лук репчатый"
+    }
+  },
+
+  {
+    "model": "cookbook.product",
+    "pk": 7,
+    "fields": {
+      "name": "Чеснок"
+    }
+  },
+  {
+    "model": "cookbook.product",
+    "pk": 8,
+    "fields": {
+      "name": "Зелень петрушки свежая"
+    }
+  },
+  {
+    "model": "cookbook.product",
+    "pk": 9,
+    "fields": {
+      "name": "Перец чёрный горошком"
+    }
+  },
+  {
+    "model": "cookbook.product",
+    "pk": 10,
+    "fields": {
+      "name": "Перец чёрный молотый"
+    }
+  },
+  {
+    "model": "cookbook.product",
+    "pk": 11,
+    "fields": {
+      "name": "Масло подсолнечное"
+    }
+  },
+  {
+    "model": "cookbook.product",
+    "pk": 12,
+    "fields": {
+      "name": "Томатная паста"
     }
   }
 ]

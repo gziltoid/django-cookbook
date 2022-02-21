@@ -8,13 +8,15 @@ def index_view(request):
     recipes = []
     query = {}
 
-    request.session.clear()
+    if request.session:
+        request.session.clear()
 
     if request.method == "POST":
         requested_title = request.POST.get("recipe_name")
-        request.session['title'] = requested_title
         requested_products = list(map(int, request.POST.getlist("ingredients[]")))
+        request.session['title'] = requested_title
         request.session['products'] = requested_products
+        request.session.modified = True
 
         if requested_products:
             recipe_ids = (

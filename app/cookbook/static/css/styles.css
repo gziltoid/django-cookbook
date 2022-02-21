@@ -133,11 +133,11 @@ body.demo{
 }
 .search .form-group .form-control,.search .form-group input,.search .select2-container .select2-selection--single{
     height: 45px;
-    width: 642px;
+    width: 750px;
 }
 .search .select2-container .select2-selection--multiple,.submit .content .select2-container .select2-selection--single,.submit .content input{
-    height:80px;
-    width: 642px;
+    height: 80px;
+    width: 750px;
 }
 .box.list.recipes h2{
     font-size:1.2rem;

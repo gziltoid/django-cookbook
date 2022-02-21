@@ -54,5 +54,12 @@
     "fields": {
       "name": "ст-н"
     }
+  },
+  {
+    "model": "cookbook.unit",
+    "pk": 9,
+    "fields": {
+      "name": "по вкусу"
+    }
   }
 ]
