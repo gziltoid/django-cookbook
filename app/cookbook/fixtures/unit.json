@@ -1,10 +1,58 @@
 [
-  { "model": "cookbook.unit", "pk": 1, "fields": { "name": "г" } },
-  { "model": "cookbook.unit", "pk": 2, "fields": { "name": "кг" } },
-  { "model": "cookbook.unit", "pk": 3, "fields": { "name": "шт" } },
-  { "model": "cookbook.unit", "pk": 4, "fields": { "name": "мл" } },
-  { "model": "cookbook.unit", "pk": 5, "fields": { "name": "л" } },
-  { "model": "cookbook.unit", "pk": 6, "fields": { "name": "ст.л." } },
-  { "model": "cookbook.unit", "pk": 7, "fields": { "name": "ч.л." } },
-  { "model": "cookbook.unit", "pk": 8, "fields": { "name": "ст-н" } }
+  {
+    "model": "cookbook.unit",
+    "pk": 1,
+    "fields": {
+      "name": "г"
+    }
+  },
+  {
+    "model": "cookbook.unit",
+    "pk": 2,
+    "fields": {
+      "name": "кг"
+    }
+  },
+  {
+    "model": "cookbook.unit",
+    "pk": 3,
+    "fields": {
+      "name": "шт"
+    }
+  },
+  {
+    "model": "cookbook.unit",
+    "pk": 4,
+    "fields": {
+      "name": "мл"
+    }
+  },
+  {
+    "model": "cookbook.unit",
+    "pk": 5,
+    "fields": {
+      "name": "л"
+    }
+  },
+  {
+    "model": "cookbook.unit",
+    "pk": 6,
+    "fields": {
+      "name": "ст.л."
+    }
+  },
+  {
+    "model": "cookbook.unit",
+    "pk": 7,
+    "fields": {
+      "name": "ч.л."
+    }
+  },
+  {
+    "model": "cookbook.unit",
+    "pk": 8,
+    "fields": {
+      "name": "ст-н"
+    }
+  }
 ]

@@ -1,5 +1,4 @@
-from cookbook.models import Recipe, Product, Ingredient
-from django.db.models import Count
+from cookbook.models import Recipe, Product
 from django.shortcuts import render, get_object_or_404
 
 
@@ -11,8 +10,8 @@ def index_view(request):
         requested_title = request.POST.get("recipe_name")
         requested_products = list(map(int, request.POST.getlist("ingredients[]")))
 
-        request.session['title'] = requested_title
-        request.session['products'] = requested_products
+        request.session["title"] = requested_title
+        request.session["products"] = requested_products
         request.session.modified = True
 
         recipes = Recipe.objects.query(requested_title, requested_products)
