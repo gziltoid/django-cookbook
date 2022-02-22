@@ -3,7 +3,7 @@
     "model": "cookbook.product",
     "pk": 1,
     "fields": {
-      "name": "Свиная корейка без кости"
+      "name": "Свиная корейка"
     }
   },
   {
