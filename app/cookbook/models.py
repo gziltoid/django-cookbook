@@ -42,6 +42,7 @@ class Recipe(models.Model):
         app_label = "cookbook"
         verbose_name = 'Рецепт'
         verbose_name_plural = 'Рецепты'
+        ordering = ('title',)
 
 
 class Unit(models.Model):
