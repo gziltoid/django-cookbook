@@ -4,35 +4,22 @@ from django.shortcuts import render, get_object_or_404
 
 
 def index_view(request):
-    products = Product.objects.all()
-    recipes = []
-    query = {}
-
     if request.session:
         request.session.clear()
 
     if request.method == "POST":
         requested_title = request.POST.get("recipe_name")
         requested_products = list(map(int, request.POST.getlist("ingredients[]")))
+
         request.session['title'] = requested_title
         request.session['products'] = requested_products
         request.session.modified = True
 
-        if requested_products:
-            recipe_ids = (
-                Ingredient.objects
-                    .filter(product_id__in=requested_products)
-                    .values('recipe')
-                    .annotate(count=Count('recipe'))
-                    .filter(count__exact=len(requested_products))
-                    .values('recipe')
-            )
-            query["id__in"] = recipe_ids
+        recipes = Recipe.objects.query(requested_title, requested_products)
+    else:
+        recipes = Recipe.objects.all()
 
-        if requested_title:
-            query["title__icontains"] = requested_title
-
-    recipes = Recipe.objects.filter(**query)
+    products = Product.objects.all()
     context = {"products": products, "recipes": recipes}
     return render(request, "index.html", context)
 

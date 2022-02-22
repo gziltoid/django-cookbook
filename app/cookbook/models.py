@@ -23,6 +23,27 @@ class Product(models.Model):
         verbose_name_plural = 'Продукты'
 
 
+class RecipeManager(models.Manager):
+    def query(self, requested_title, requested_products):
+        query = {}
+
+        if requested_products:
+            recipe_ids = (
+                    Ingredient.objects
+                        .filter(product_id__in=requested_products)
+                        .values('recipe')
+                        .annotate(count=models.Count('recipe'))
+                        .filter(count__exact=len(requested_products))
+                        .values('recipe')
+                )
+            query["id__in"] = recipe_ids
+
+        if requested_title:
+            query["title__icontains"] = requested_title
+    
+        return self.get_queryset().filter(**query)
+
+
 class Recipe(models.Model):
     '''Рецепт'''
 
@@ -34,6 +55,8 @@ class Recipe(models.Model):
         max_length=10000,
         verbose_name='Описание рецепта',
     )
+
+    objects = RecipeManager()
 
     def __str__(self):
         return self.title
@@ -91,6 +114,7 @@ class Ingredient(models.Model):
         return 'Ингредиент'
 
     class Meta:
+        unique_together = ('recipe', 'product',)
         app_label = "cookbook"
         verbose_name = "Ингредиент в рецепте"
         verbose_name_plural = "Ингредиенты в рецепте"
