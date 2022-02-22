@@ -2,85 +2,51 @@
   {
     "model": "cookbook.product",
     "pk": 1,
-    "fields": {
-      "name": "Свиная корейка"
-    }
+    "fields": { "name": "Свиная корейка" }
   },
-  {
-    "model": "cookbook.product",
-    "pk": 2,
-    "fields": {
-      "name": "Сало свиное свежее"
-    }
-  },
+  { "model": "cookbook.product", "pk": 2, "fields": { "name": "Сало свиное" } },
   {
     "model": "cookbook.product",
     "pk": 3,
-    "fields": {
-      "name": "Масло сливочное"
-    }
+    "fields": { "name": "Масло сливочное" }
   },
-  {
-    "model": "cookbook.product",
-    "pk": 4,
-    "fields": {
-      "name": "Картофель"
-    }
-  },
-  {
-    "model": "cookbook.product",
-    "pk": 5,
-    "fields": {
-      "name": "Морковь"
-    }
-  },
+  { "model": "cookbook.product", "pk": 4, "fields": { "name": "Картофель" } },
+  { "model": "cookbook.product", "pk": 5, "fields": { "name": "Морковь" } },
   {
     "model": "cookbook.product",
     "pk": 6,
-    "fields": {
-      "name": "Лук репчатый"
-    }
+    "fields": { "name": "Лук репчатый" }
   },
-  {
-    "model": "cookbook.product",
-    "pk": 7,
-    "fields": {
-      "name": "Чеснок"
-    }
-  },
+  { "model": "cookbook.product", "pk": 7, "fields": { "name": "Чеснок" } },
   {
     "model": "cookbook.product",
     "pk": 8,
-    "fields": {
-      "name": "Зелень петрушки свежая"
-    }
+    "fields": { "name": "Зелень петрушки свежая" }
   },
   {
     "model": "cookbook.product",
     "pk": 9,
-    "fields": {
-      "name": "Перец чёрный горошком"
-    }
+    "fields": { "name": "Перец чёрный горошком" }
   },
   {
     "model": "cookbook.product",
     "pk": 10,
-    "fields": {
-      "name": "Перец чёрный молотый"
-    }
+    "fields": { "name": "Перец чёрный молотый" }
   },
   {
     "model": "cookbook.product",
     "pk": 11,
-    "fields": {
-      "name": "Масло подсолнечное"
-    }
+    "fields": { "name": "Масло подсолнечное" }
   },
   {
     "model": "cookbook.product",
     "pk": 12,
-    "fields": {
-      "name": "Томатная паста"
-    }
-  }
+    "fields": { "name": "Томатная паста" }
+  },
+  {
+    "model": "cookbook.product",
+    "pk": 13,
+    "fields": { "name": "Куриная грудка" }
+  },
+  { "model": "cookbook.product", "pk": 14, "fields": { "name": "Творог" } }
 ]
